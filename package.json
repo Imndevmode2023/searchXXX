@@ -1,0 +1,25 @@
+{
+  "name": "searchxxx",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Imndevmode2023/searchXXX.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Imndevmode2023/searchXXX/issues"
+  },
+  "homepage": "https://github.com/Imndevmode2023/searchXXX#readme",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "expresss": "^0.0.0",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2"
+  }
+}

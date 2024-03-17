@@ -1,0 +1,4 @@
+2024-03-17T21:05:11.861Z - Error: Cannot find module 'puppeteer-core'
+Require stack:
+- /home/cpu2023/node_modules/puppeteer-extra/dist/index.cjs.js
+- /home/cpu2023/searchXXX/app.js
