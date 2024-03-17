@@ -11,7 +11,7 @@ if (!fs.existsSync('./views')){
 }
 // add stealth plugin and use defaults (all evasion techniques)
 const StealthPlugin = require('puppeteer-extra-plugin-stealth')
-puppeteer.use(StealthPlugin())
+puppeteer.use(StealthPlugin());
 
 const app = express();
 app.use(express.urlencoded({ extended: true }));
