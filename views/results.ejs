@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Video Gallery</title>
+  <style>
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .video-item video {
+      width: 100%;
+      height: auto;
+      cursor: pointer;
+    }
+
+    .video-item {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Video Gallery</h1>
+  <div class="video-grid">
+    <% videos.forEach(video => { %>
+      <div class="video-item">
+        <h3><%= video.title %></h3>
+        <p>Channel: <%= video.channel %></p>
+        <p>Duration: <%= video.duration %></p>
+        <video src="<%= video.previewURL %>" onclick="playActualVideo('<%= video.videoURL %>')" muted autoplay loop></video>
+      </div>
+    <% }); %>
+  </div>
+
+  <script>
+    function playActualVideo(videoURL) {
+      const newTab = window.open(videoURL, '_blank');
+      newTab.focus();
+
+      // Listen for the video to be loaded in the new tab
+      const checkVideo = setInterval(() => {
+        const videoElement = newTab.document.querySelector('video');
+        if (videoElement) {
+          clearInterval(checkVideo);
+          videoElement.play();
+
+          // Unmute the video
+          videoElement.muted = false;
+        }
+      }, 500);
+    }
+  </script>
+</body>
+
+</html>

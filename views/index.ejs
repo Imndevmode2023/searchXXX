@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Select Site</title>
+</head>
+<body>
+  <form action="/search" method="post">
+    <% for (const [siteName, config] of Object.entries(siteConfigs)) { %>
+      <input type="radio" id="<%= siteName %>" name="selectedSite" value="<%= siteName %>">
+      <label for="<%= siteName %>"><%= siteName %></label><br>
+    <% } %>
+    <br>
+    <label for="searchTerm">Search Term:</label>
+    <input type="text" id="searchTerm" name="searchTerm"><br><br>
+
+    <label for="hdQuality">HD Quality:</label>
+    <input type="checkbox" id="hdQuality" name="hdQuality" value="1"><br><br>
+
+    <label for="min_duration">Min Duration:</label>
+    <select name="min_duration">
+      <option value="">no limits</option>
+      <option value="10">10 mins</option>
+      <option value="20">20 mins</option>
+      <option value="30">30 mins</option>
+      <option value="">no limits</option>
+    </select>
+
+    <label for="max_duration">Max Duration:</label>
+    <select name="max_duration">
+      <option value="">no limits</option>
+      <option value="10">10 mins</option>
+      <option value="20">20 mins</option>
+      <option value="30">30 mins</option>
+      <option value="">no limits</option>
+    </select><br><br>
+
+    <input type="submit" value="Search">
+  </form>
+</body>
+</html>
+
