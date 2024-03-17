@@ -69,8 +69,8 @@ console.log('siteURL:', siteUrl);
 
    // Save page HTML and screenshot for inspection
     const pageContent = await page.content();
-    fs.writeFileSync('pageContent.html', pageContent);
-    await page.screenshot({ path: 'screenshot.png' });
+    await fs.promises.writeFile('pageContent.html', pageContent).catch(console.error);
+    await page.screenshot({ path: 'screenshot.png' }).catch(console.error);
 
     const videos = await xpathHelper.extractVideoData(page, selectedSite);
 
