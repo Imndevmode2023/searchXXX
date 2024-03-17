@@ -7,7 +7,7 @@ const fs = require('fs');
 
 // Create views directory if it doesn't exist
 if (!fs.existsSync('./views')){
-    fs.mkdirSync('./views');
+    fs.promises.mkdir('./views', { recursive: true }).catch(console.error);
 }
 // add stealth plugin and use defaults (all evasion techniques)
 const StealthPlugin = require('puppeteer-extra-plugin-stealth')
@@ -18,7 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 
 const logError = (error) => {
- fs.appendFileSync('error.log', `${new Date().toISOString()} - ${error}\n`);
+ fs.promises.appendFile('error.log', `${new Date().toISOString()} - ${error}\n`).catch(console.error);
 };
 
 app.get('/', (req, res) => {
