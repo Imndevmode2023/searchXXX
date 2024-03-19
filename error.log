@@ -2,3 +2,10 @@
 Require stack:
 - /home/cpu2023/node_modules/puppeteer-extra/dist/index.cjs.js
 - /home/cpu2023/searchXXX/app.js
+2024-03-17T21:18:02.364Z - Error: Cannot find module 'puppeteer-core'
+Require stack:
+- /home/cpu2023/searchXXX/node_modules/puppeteer-extra/dist/index.cjs.js
+- /home/cpu2023/searchXXX/app.js
+2024-03-18T23:30:24.036Z - Error: An `executablePath` or `channel` must be specified for `puppeteer-core`
+2024-03-19T00:13:39.043Z - ReferenceError: FontFaceSetLoadEvent is not defined
+2024-03-19T00:20:44.939Z - ReferenceError: FontFaceSetLoadEvent is not defined

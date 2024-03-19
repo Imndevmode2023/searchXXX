@@ -5,7 +5,7 @@ async function extractVideoData(page, selectedSite) {
   let videoElements;
 
   try {
-    videoElements = await page.$$(config.selectors.videovKey);
+         videovKey: '#videoSearchResult li[id]',
     videoElements = await page.$$(config.selectors.videovKey);
 
     console.log()
@@ -27,7 +27,8 @@ async function extractVideoData(page, selectedSite) {
       const title = await element.$eval(config.selectors.dataTitle, el => el.getAttribute('data-title'));
       const previewURL = await element.$eval(config.selectors.previewGif, el => el.getAttribute('data-mediabook'));
       const poster = await element.$eval(config.selectors.previewGif, el => el.getAttribute('data-mediumthumb'));
-      const videoKey = await element.$eval(config.selectors.videovKey, el => el.getAttribute('data-video-vkey'));
+        // Corrected way to get attribute
+        const videoKey = await element.evaluate(el => el.getAttribute('data-video-vkey'));
         const videoDuration =  await element.$eval(config.selectors.videoDuration, el => el.textContent);
         const channel = await element.$eval(config.selectors.channel, el => el.textContent);
         

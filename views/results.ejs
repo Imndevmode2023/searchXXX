@@ -6,8 +6,8 @@
   <style>
     .video-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
     }
 
     .video-item video {
@@ -46,7 +46,8 @@
         if (videoElement) {
           clearInterval(checkVideo);
           videoElement.play();
-
+          // fullscreen 
+          videoElement.requestFullscreen();
           // Unmute the video
           videoElement.muted = false;
         }
